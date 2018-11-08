@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class Categoria extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+         Schema::create('Categorias', function (Blueprint $table) {
+                   $table->increments('id_Cat');
+                   $table->string('categoria',40);
+                   $table->rememberToken();
+                   $table->timestamps();
+       });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('Categorias');
+    }
+}
